@@ -79,3 +79,20 @@ async def get_weather(location: str) -> str:
         return f"Could not find a forecast for {location}. Please check the location spelling."
 
     return f"Multiday Weather Forecast for {location}:\n- " + "\n- ".join(summary)
+
+# --- Agent Definition ---
+root_agent = Agent(
+    model='gemini-2.5-flash',
+    name="weather_agent",
+    description="Provides weather forecasts for a destination using OpenWeatherMap.",
+    instruction="Answer weather-related questions using the get_weather tool. If the learner does not specifies the number of days for forecast, you'll usually respond with the forecast for the next 5 days.",
+    tools=[get_weather],
+    generate_content_config=types.GenerateContentConfig(
+        safety_settings=[
+            types.SafetySetting(
+                category=types.HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
+                threshold=types.HarmBlockThreshold.OFF,
+            ),
+        ]
+    ),
+)
