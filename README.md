@@ -112,3 +112,15 @@ Once all services are running:
 * CLI should accept queries
 * Web UI should be accessible (typically http://localhost:3000 or similar)
 * API server should respond on port 8001
+
+### Testing
+
+* Start by typing queries such as:
+    * Plan me a trip going from New York to London in March for 2 days.
+    * Plan me a 3-day trip to Paris.
+    * What hotels are available in Rome under $100?
+    * Show me flights from New York to London on October 10.
+    * What will the weather be like in Paris next week?
+    * Plan me a trip going from New York to London starting from 01-01 and then returning on 01-04.
+* The CLI will display responses from the root agent that combine information from the relevant sub-agents.
+* Type exit or quit to close the CLI session.
