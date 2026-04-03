@@ -68,9 +68,9 @@ This project demonstrates how multi-agent collaboration can outperform tradition
 This project uses a multi-agent setup with CLI, web UI, and API server components. Follow the steps below to run everything locally.
 
 ### Prerequisites
-Python 3.10+
-OpenWeatherMap API key
-Gemini API key
+- Python 3.10+
+- OpenWeatherMap API key
+- Gemini API key
 
 ### Step-by-Step Instructions
 
@@ -80,29 +80,30 @@ You’ll need 3 separate terminals running simultaneously.
 
 * Terminal 1 — Run CLI Interface
 
-Start the command-line interface:
-
-python cli.py
-
-This allows you to interact with the travel planner via terminal.
+  Start the command-line interface:
+  
+  `python cli.py`
+  
+  This allows you to interact with the travel planner via terminal.
 
 * Terminal 2 — Start ADK Web UI
 
-Launch the web interface:
-
-adk web
-Opens a browser-based UI for interacting with agents
-Useful for visualizing agent workflows and debugging
+  Launch the web interface:
+  
+  `adk web`
+  
+  Opens a browser-based UI for interacting with agents
+  Useful for visualizing agent workflows and debugging
 
 * Terminal 3 — Start API Server (A2A Enabled)
 
-Run the agent API server with Agent-to-Agent (A2A) communication:
-
-adk api_server --a2a --port 8001 --host 0.0.0.0 agents
-
-Enables multi-agent orchestration
-Hosts agents under the agents/ directory
-Exposes APIs at: http://localhost:8001
+  Run the agent API server with Agent-to-Agent (A2A) communication:
+  
+  `adk api_server --a2a --port 8001 --host 0.0.0.0 agents`
+  
+  Enables multi-agent orchestration
+  Hosts agents under the agents/ directory
+  Exposes APIs at: http://localhost:8001
 
 ### Verifying Setup
 
